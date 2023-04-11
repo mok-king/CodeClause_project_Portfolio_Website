@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+    <section class="header">
+        <nav>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="committe.html">WORK</a></li>
+                    <li class="list-dropdown">
+                            <a class="nav-tab" onclick="toggle_dropdown()">PROJECT</a>
+                            <div id="dropdown">
+                                <a  href="callforpapers.html">Call for papers</a>
+                                <a  href="importantdates.html">Important dates</a>
+                            </div>
+                        </li>
+                        <span id="tabslide">
+                            <li><a href="publication.html">CONTACT</a></li>
+                        </span>
+                    </span>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+        <div class="text-box">
+            <h1>Designs that tell a story, inspire change, and captivate the world.
+            </h1>
+            <p></p>
+        </div>
+
+    </section>
+    
+
+    <!-- -----Footer------ -->
+<section class="footer">
+    <h4>About Me</h4>
+        <p class="short-desc">My approach is to design and to combine artistry and technology to create unforgettable experiences, and I strive to create work<br> that innovates without limits.</p>
+        <div class="icons">
+            <i class="fa fa-facebook"></i>
+            <i class="fa fa-twitter"></i>
+            <i class="fa fa-linkedin"></i>
+            <i class="fa fa-instagram"></i>
+        </div>
+        <p class="rights">Portfolio Website 2023</p>
+</section>
+</body>
+
+ <!-- JavaScript for NavBar -->
+ <script>
+     var navLinks=document.getElementById("navLinks");
+var navdropdown=document.getElementById("dropdown");
+var tabslider=document.getElementById("tabslide");
+    function showMenu(){
+        navLinks.style.right="0";
+    }
+    function hideMenu(){
+        navLinks.style.right="-250px";
+    }
+    function toggle_dropdown(){
+    tabslider.style.transitionDuration="0.5s";
+    if (navdropdown.style.display === "block") {
+        navdropdown.style.display = "none";
+        tabslider.style.top="0px";
+    } else {
+        tabslider.style.top="65px";
+        navdropdown.style.display = "block";
+    }
+}
+window.onclick=function(event){
+    if(event.target.className!="nav-tab"){
+        navdropdown.style.display="none";
+        tabslider.style.top="0px";
+    }
+}
+     
+//     var navLinks=document.getElementById("navLinks");
+//     var prevdropdowntabid;
+//     var prevdropdowntabsliderid;
+//     function showMenu(){
+//         navLinks.style.right="0";
+//     }
+//     function hideMenu(){
+//         navLinks.style.right="-250px";
+//     }
+//     function toggle_dropdown(dropdownid,tabsliderid){
+//         var navdropdown=document.getElementById(dropdownid);
+//         var tabslider=document.getElementById(tabsliderid);
+//     tabslider.style.transitionDuration="0.5s";
+//     var dist="130px"
+//     if(dropdownid=="dropdown2"){
+//         dist="65px"
+//     }
+//     if (navdropdown.style.display === "block") {
+//         navdropdown.style.display = "none";
+//         tabslider.style.top="0px";
+//     } else {
+//         tabslider.style.top=dist;
+//         navdropdown.style.display = "block";
+//         if(prevdropdowntabid!=dropdownid&&prevdropdowntabid!=undefined){
+//             document.getElementById(prevdropdowntabid).style.display="none";
+//                 document.getElementById(prevdropdowntabsliderid).style.top="0px"; 
+//         }
+//     }
+//     prevdropdowntabid=dropdownid;
+//     prevdropdowntabsliderid=tabsliderid;
+// }
+// window.onclick=function(event){
+//     if(event.target.className!="nav-tab"){
+//         navtab1=document.getElementById("dropdown1");
+//         navtab2=document.getElementById("dropdown2");
+//         slider1=document.getElementById("tabslide1");
+//         slider2=document.getElementById("tabslide2");
+//         navtab1.style.display="none";
+//         navtab2.style.display="none";
+//         slider1.style.top="0px";
+//         slider2.style.top="0px";
+
+//     }
+// }
+</script>
+</html>
